@@ -9,9 +9,11 @@ import AddProducts from "./pages/Admin/AddProducts";
 import DashBoard from "./pages/Admin/Dashboard";
 import Home from "./pages/Client/Home";
 import Favorites from "./pages/Client/Favorites";
+import { CardContextProvider } from "./context/CardContext";
 function App() {
   return (
     <>
+      <CardContextProvider>
       <Routes>
         <Route path="/" element={<ClientLayout />}>
           <Route index element={<Home />} />
@@ -30,6 +32,7 @@ function App() {
           <Route path="*" element={<div>Element not found</div>} />
         </Route>
       </Routes>
+      </CardContextProvider>
     </>
   );
 }

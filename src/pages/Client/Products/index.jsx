@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Card from "../../../Layouts/Client/Card";
+import Loading from "../../../Components/Loading"
 const Products = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("https://api.escuelajs.co/api/v1/products")
+    fetch("db.json")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
@@ -17,13 +18,13 @@ const Products = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-4 lg:mx-20 gap-10 my-4 ">
           {data.length === 0 ? (
-            <div>Loading...</div>
+            <Loading/>
           ) : (
-            data.map((item) => (
+            data.products.map((item) => (
               <Card
                 key={item.id}
                 id={item.id}
-                image={item.images[0]}
+                image={item.image}
                 title={item.title}
                 price={item.price}
               />
