@@ -8,6 +8,7 @@ import AdminLayout from "./Layouts/Admin/Header";
 import AddProducts from "./pages/Admin/AddProducts";
 import DashBoard from "./pages/Admin/Dashboard";
 import Home from "./pages/Client/Home";
+import Favorites from "./pages/Client/Favorites";
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<ClientLayout />}>
           <Route index element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/products" element={<Products />}>
             <Route path=":id" element={<ProductDetail />} />
           </Route>
