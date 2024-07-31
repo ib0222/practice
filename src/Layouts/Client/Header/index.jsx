@@ -22,7 +22,7 @@ const ClientLayout = () => {
                   to={"/admin/"}
                   className="text-white text-lg font-semibold px-4 py-2"
                 >
-                  Switch to Admin
+                  <span className="text-4xl">🛠️</span>
                 </Link>
                 <NavLink
                   to={"/products"}

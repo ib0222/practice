@@ -81,7 +81,7 @@ const AddProducts = () => {
         </div>
         <div>
           <input
-            type="text"
+            type="number"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             placeholder="Product Price"
@@ -93,7 +93,7 @@ const AddProducts = () => {
         </div>
         <div>
           <input
-            type="text"
+            type="email"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Product Description"
@@ -105,7 +105,7 @@ const AddProducts = () => {
         </div>
         <div>
           <input
-            type="text"
+            type="url"
             value={image}
             onChange={(e) => setImage(e.target.value)}
             placeholder="Product Image URL"
