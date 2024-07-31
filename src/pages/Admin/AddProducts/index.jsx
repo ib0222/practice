@@ -41,7 +41,7 @@ const AddProducts = () => {
           console.log(json);
           setSuccessMessage("Product added successfully!");
           setTimeout(() => {
-            setSuccessMessage("")
+            setSuccessMessage("");
           }, 2000);
           setTitle("");
           setPrice("");
@@ -53,7 +53,7 @@ const AddProducts = () => {
     } else {
       setErrors(newErrors);
       setTimeout(() => {
-        setErrors("")
+        setErrors("");
       }, 2000);
     }
   }
@@ -74,10 +74,14 @@ const AddProducts = () => {
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Product Title"
             className={`w-full p-2 border-2 rounded-lg focus:outline-none focus:ring-2 ${
-              errors.title ? "border-red-500 focus:ring-red-500" : "focus:ring-blue-500"
+              errors.title
+                ? "border-red-500 focus:ring-red-500"
+                : "focus:ring-blue-500"
             }`}
           />
-          {errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
+          {errors.title && (
+            <p className="text-red-500 text-sm">{errors.title}</p>
+          )}
         </div>
         <div>
           <input
@@ -86,10 +90,14 @@ const AddProducts = () => {
             onChange={(e) => setPrice(e.target.value)}
             placeholder="Product Price"
             className={`w-full p-2 border-2 rounded-lg focus:outline-none focus:ring-2 ${
-              errors.price ? "border-red-500 focus:ring-red-500" : "focus:ring-blue-500"
+              errors.price
+                ? "border-red-500 focus:ring-red-500"
+                : "focus:ring-blue-500"
             }`}
           />
-          {errors.price && <p className="text-red-500 text-sm">{errors.price}</p>}
+          {errors.price && (
+            <p className="text-red-500 text-sm">{errors.price}</p>
+          )}
         </div>
         <div>
           <input
@@ -98,10 +106,14 @@ const AddProducts = () => {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Product Description"
             className={`w-full p-2 border-2 rounded-lg focus:outline-none focus:ring-2 ${
-              errors.description ? "border-red-500 focus:ring-red-500" : "focus:ring-blue-500"
+              errors.description
+                ? "border-red-500 focus:ring-red-500"
+                : "focus:ring-blue-500"
             }`}
           />
-          {errors.description && <p className="text-red-500 text-sm">{errors.description}</p>}
+          {errors.description && (
+            <p className="text-red-500 text-sm">{errors.description}</p>
+          )}
         </div>
         <div>
           <input
@@ -110,22 +122,27 @@ const AddProducts = () => {
             onChange={(e) => setImage(e.target.value)}
             placeholder="Product Image URL"
             className={`w-full p-2 border-2 rounded-lg focus:outline-none focus:ring-2 ${
-              errors.image ? "border-red-500 focus:ring-red-500" : "focus:ring-blue-500"
+              errors.image
+                ? "border-red-500 focus:ring-red-500"
+                : "focus:ring-blue-500"
             }`}
           />
-          {errors.image && <p className="text-red-500 text-sm">{errors.image}</p>}
+          {errors.image && (
+            <p className="text-red-500 text-sm">{errors.image}</p>
+          )}
         </div>
         <div>
-          <input
-            type="text"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            placeholder="Product Category"
-            className={`w-full p-2 border-2 rounded-lg focus:outline-none focus:ring-2 ${
-              errors.category ? "border-red-500 focus:ring-red-500" : "focus:ring-blue-500"
-            }`}
-          />
-          {errors.category && <p className="text-red-500 text-sm">{errors.category}</p>}
+          <select
+            id="category"
+            className="bg-white border-2 border-gray-300 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 placeholder:text-transparent" onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="Men's Clothing">Men's Clothing</option>
+            <option value="Jewelery">Jewelery</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Women's clothing">Women's clothing</option>
+          </select>
+        </div>
+        <div>
         </div>
         <button
           onClick={postProduct}
