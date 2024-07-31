@@ -25,7 +25,7 @@ const AdminTableRow = ({item,setProductToEdit,setProductToDelete}) => {
               </button>
               <button
                 className="bg-yellow-500 text-white px-3 py-1 rounded-lg hover:bg-yellow-600 ease-in-out duration-200 focus:outline-none"
-                onClick={() => setProductToEdit(item)}
+                onClick={() => setProductToEdit()}
               >
                 Edit
               </button>

@@ -17,7 +17,8 @@ function App() {
         <Route path="/" element={<ClientLayout />}>
           <Route index element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/products" element={<Products />}>
+          <Route path="/products" >
+            <Route index element={<Products />}/>
             <Route path=":id" element={<ProductDetail />} />
           </Route>
 
