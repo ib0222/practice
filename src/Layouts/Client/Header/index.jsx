@@ -18,6 +18,12 @@ const ClientLayout = () => {
             </Link>
             <nav className="flex justify-between items-center gap-x-4 h-full mx-4">
               <div className="space-x-10">
+                <Link
+                  to={"/admin/"}
+                  className="text-white text-lg font-semibold px-4 py-2"
+                >
+                  Switch to Admin
+                </Link>
                 <NavLink
                   to={"/products"}
                   className="text-white text-lg font-semibold px-4 py-2"
@@ -32,12 +38,6 @@ const ClientLayout = () => {
                   <span className=" text-red-600 ml-2">
                     ({favorites.length})
                   </span>
-                </NavLink>
-                <NavLink
-                  to={"/contact"}
-                  className="text-white text-lg font-semibold px-4 py-2"
-                >
-                  Contact
                 </NavLink>
               </div>
             </nav>

@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import ClientLayout from "./Layouts/Client/Header";
-import Contact from "./pages/Client/Contact";
 import Products from "./pages/Client/Products";
 import ProductsAdmin from "./pages/Admin/ProductsAdmin";
 import ProductDetail from "./pages/Client/ProductDetail";
@@ -17,7 +16,6 @@ function App() {
       <Routes>
         <Route path="/" element={<ClientLayout />}>
           <Route index element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/products" element={<Products />}>
             <Route path=":id" element={<ProductDetail />} />
